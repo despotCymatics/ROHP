@@ -1,0 +1,52 @@
+/* ----Open+Sans---- */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,800&subset=latin,latin-ext,cyrillic);
+
+/* ----FontAwesome---- */
+/*@font-face {
+    font-family: 'fa';
+    src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'),     url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+@font-face {
+    font-family: 'NeoSansStdLight';
+    src: url('../fonts/NeoSansStdLight.eot');
+    src: url('../fonts/NeoSansStdLight.eot') format('embedded-opentype'),
+    url('../fonts/NeoSansStdLight.woff2') format('woff2'),
+    url('../fonts/NeoSansStdLight.woff') format('woff'),
+    url('../fonts/NeoSansStdLight.ttf') format('truetype'),
+    url('../fonts/NeoSansStdLight.svg#NeoSansStdLight') format('svg');
+}
+
+@font-face {
+    font-family: 'NeoSansStdMedium';
+    src: url('../fonts/NeoSansStdMedium.eot');
+    src: url('../fonts/NeoSansStdMedium.eot') format('embedded-opentype'),
+    url('../fonts/NeoSansStdMedium.woff2') format('woff2'),
+    url('../fonts/NeoSansStdMedium.woff') format('woff'),
+    url('../fonts/NeoSansStdMedium.ttf') format('truetype'),
+    url('../fonts/NeoSansStdMedium.svg#NeoSansStdMedium') format('svg');
+}
+
+
+@font-face {
+    font-family: 'NeoSansStdRegular';
+    src: url('../fonts/NeoSansStdRegular.eot');
+    src: url('../fonts/NeoSansStdRegular.eot') format('embedded-opentype'),
+    url('../fonts/NeoSansStdRegular.woff2') format('woff2'),
+    url('../fonts/NeoSansStdRegular.woff') format('woff'),
+    url('../fonts/NeoSansStdRegular.ttf') format('truetype'),
+    url('../fonts/NeoSansStdRegular.svg#NeoSansStdRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'NeoSansStdBold';
+    src: url('../fonts/NeoSansStdBold.eot');
+    src: url('../fonts/NeoSansStdBold.eot') format('embedded-opentype'),
+    url('../fonts/NeoSansStdBold.woff2') format('woff2'),
+    url('../fonts/NeoSansStdBold.woff') format('woff'),
+    url('../fonts/NeoSansStdBold.ttf') format('truetype'),
+    url('../fonts/NeoSansStdBold.svg#NeoSansStdBold') format('svg');
+}

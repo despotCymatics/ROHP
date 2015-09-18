@@ -1,0 +1,115 @@
+.gutter {
+    width: auto;
+}
+
+
+@media (max-width: 1280px) {
+    .mainMenu ul li a {
+        line-height: 30px;
+        font-size: 14px;
+    }
+    .mainMenu ul ul li a {
+        font-size: 12px;
+        line-height: 28px;
+    }
+
+    .mainMenu ul li span.subToggler {
+        top: 0;
+        height: 30px;
+        line-height: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .mainMenu {
+        width: 260px;
+        left: -260px;
+        background: rgba(34, 34, 34, .98);
+    }
+
+    .mainMenu.active {
+        transform: translate3d(0px,0,0);
+        transition: transform 320ms ease;
+    }
+
+    .menuToggler {
+        top:30px;
+        left: 260px;
+        display: block;
+        position: absolute;
+        z-index: 2;
+        cursor: pointer;
+        transform: translate3d(-260px,0,0);
+        transition: transform 320ms ease;
+    }
+
+    .menuToggler.on {
+        transform: translate3d(0px,0,0);
+        transition: transform 320ms ease;
+    }
+
+    .menuToggler:before {
+        display: block;
+        width: 40px;
+        height: 36px;
+        background: rgba(34, 34, 34, .98);
+        color: #fff;
+        text-align: center;
+        line-height: 36px;
+        vertical-align: middle;
+        font-family: FontAwesome;
+        font-size: 28px;
+        font-weight: normal;
+        content: '\f0c9';
+    }
+
+    .menuToggler.on:before {
+
+        content: "\f104";
+
+    }
+
+    .mainMenu:before {
+        content: ' ';
+        display: table;
+        clear: both;
+        width: 100%;
+    }
+
+    .mainMenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 260px;
+        overflow-y: scroll;
+        transform: translate3d(-280px,0,0);
+        transition: transform 320ms ease;
+    }
+
+    .bottomBar {
+        display: table;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(45, 45, 45, 0.9);
+    }
+
+    .bottomBar .tw-feed.mobile {
+        display: table-caption;
+        background: rgba(45, 45, 45, 0.9) none repeat scroll 0 0;
+        border-bottom: 1px solid #525252;
+        height: auto;
+    }
+
+    .gutter {
+        margin-left: 0;
+    }
+
+    .sidebar {
+        max-width: none;
+    }
+
+}

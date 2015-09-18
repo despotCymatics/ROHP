@@ -1,0 +1,232 @@
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*:focus {
+    outline: 0;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden],
+template {
+    display: none;
+}
+
+html,body {margin:0;padding:0;}
+
+body {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+}
+
+.clearfix:before,
+.within:before,
+.clearfix:after,
+.within:after
+{
+    content: " ";
+    display: table;
+}
+
+.clearfix:after, .within:after {
+    clear: both;
+}
+
+.clearfix, .within {
+    *zoom: 1;
+}
+
+input, textarea {
+    outline:none;
+}
+
+.no-margin {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+}
+
+.no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.no-padding-left {
+    padding-left: 0;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+/*-------------------------------------------
+
+    Reset
+
+-------------------------------------------*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+menu, section, article, aside, footer, header {display:block;padding:0;margin:0;}
+
+/*-------------------------------------------
+
+    Links
+
+-------------------------------------------*/
+
+a {
+    text-decoration: none;
+    color: #1689c9;
+}
+a:hover {
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+a, a:active, a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+/*-------------------------------------------
+
+    General Selectors (Typo: 6 7 8 9 10 11 12 14 18 21 24 36 48)
+
+-------------------------------------------*/
+
+
+html,body {margin:0;padding:0}
+
+
+html {
+    font-size: 62.5%;
+}
+
+html.fontLarge {
+    font-size: 72%;
+}
+
+html.fontSmall {
+    font-size: 56%;
+}
+
+p, ul, ol, dl {
+    margin-bottom: 22px;
+}
+h1 {
+    font-size: 260%;
+    line-height: 1.15;
+    margin: 0 0 22px;
+    padding: 0;
+}
+h2 {
+    font-size: 230%;
+    line-height: 1.15;
+    margin: 0 0 22px;
+    padding: 0;
+}
+
+.articleBody h2 {
+    font-size: 170%;
+}
+
+h3 {
+    font-size: 180%;
+    line-height: 1.15;
+    margin: 0 0 22px;
+    padding: 0;
+}
+
+.articleBody h3 {
+    font-size: 145%;
+}
+
+h4 {
+    font-size: 160%;
+    font-weight: 700;
+    line-height: 1.15;
+    padding: 0;
+    margin: 0 0 12px;
+    color: #12689b;
+}
+
+.articleBody h4 {
+    font-size: 120%;
+}
+
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    /* tables still need 'cellspacing="0"' in the markup */
+}
+
+p img, span img, table img {
+    display: inline;
+}
+
+
+.alignLeft {
+    text-align: left;
+}
+.alignRight {
+    text-align: right;
+}
+.clear {
+    clear: both;
+    line-height:0;
+    height:0;
+    font-size:0;
+    margin:0;
+    padding:0
+}
+
+
+select, option, input, textarea {
+    color: #000;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
