@@ -5,7 +5,9 @@
 
 @media (max-width: 1280px) {
     .mainMenu ul li a {
-        line-height: 30px;
+        /*line-height: 30px;*/
+        padding-top: 10px;
+        padding-bottom: 10px;
         font-size: 14px;
     }
     .mainMenu ul ul li a {
@@ -92,17 +94,26 @@
         transition: transform 320ms ease;
     }
 
-    .bottomBar {
+    .bottomBar, .home .bottomBar {
         left: 0;
         width: 100%;
         background: rgba(45, 45, 45, 0.9);
     }
 
-    .bottomBar .tw-feed.mobile {
+    .bottomBar .tw-feed.mobile, .home .bottomBar .tw-feed.mobile {
         display: table-caption;
         background: rgba(45, 45, 45, 0.9) none repeat scroll 0 0;
         border-bottom: 1px solid #525252;
         height: auto;
+    }
+
+    .news-flash-container {
+        width: 100%;
+        right: 0;
+        z-index: 0;
+        left: 0;
+        bottom: 30%;
+
     }
 
     .gutter {

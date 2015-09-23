@@ -48,8 +48,6 @@ ini_set('display_errors', 1);
     <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
     <![endif]-->
 
-
-
 </head>
 <body <?php body_class(); ?>>
 <div class="loader"><span></span></div>
@@ -94,89 +92,70 @@ ini_set('display_errors', 1);
 
             wp_nav_menu( $args );
             ?>
-            <!--ul>
-                <li>
-                    <a href="#">High Performance Sports</a>
-                    <ul>
-                        <li>
-                            <a href="">Volleyball</a>
-                            <ul>
-                                <li><a href="">Programs</a></li>
-                                <li><a href="">Clinics</a></li>
-                                <li><a href="">Camps</a></li>
-                                <li><a href="">Private Lessons</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Baseball</a></li>
-                        <li><a href="">TT</a></li>
-                        <li><a href="">Hockey</a></li>
-                        <li><a href="">Soccer</a></li>
-                        <li><a href="">Rowing</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Strength and conditioning</a>
-                    <ul>
-                        <li>
-                            <a href="">Volleyball</a>
-                            <ul>
-                                <li><a href="">Programs</a></li>
-                                <li><a href="">Clinics</a></li>
-                                <li><a href="">Camps</a></li>
-                                <li><a href="">Private Lessons</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Baseball</a></li>
-                        <li><a href="">TT</a></li>
-                        <li><a href="">Hockey</a></li>
-                        <li><a href="">Soccer</a></li>
-                        <li><a href="">Rowing</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Performance Services</a>
-                    <ul>
-                        <li>
-                            <a href="">Volleyball</a>
-                            <ul>
-                                <li><a href="">Programs</a></li>
-                                <li><a href="">Clinics</a></li>
-                                <li><a href="">Camps</a></li>
-                                <li><a href="">Private Lessons</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Baseball</a></li>
-                        <li><a href="">TT</a></li>
-                        <li><a href="">Hockey</a></li>
-                        <li><a href="">Soccer</a></li>
-                        <li><a href="">Rowing</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Sport Medical</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul-->
+
         </nav>
     </div>
+
 
     <div class="bottomMenu">
         <div class="searchBox">
             <i class="glyphicon glyphicon-search"></i>
             <input type="search" class="form-control" placeholder="Search" />
         </div>
+        <!--
         <div class="socialBox">
             <a href="#" class="fb"><i class="fa fa-facebook"></i></a>
             <a href="#" class="tw"><i class="fa fa-twitter"></i></a>
             <a href="#" class="yt"><i class="fa fa-youtube"></i></a>
             <a href="#" class="in"><i class="fa fa-instagram"></i></a>
             <br>
-
         </div>
+        -->
         <p class="copyright">Copyright 2015 Richmond Olympic Oval</p>
     </div>
 
 </div>
+
+<?php
+if(is_front_page()) {
+    $args = array(
+        'post_type' => 'News Flash',
+        'post_status' => 'publish',
+        'posts_per_page' => 5,
+        'caller_get_posts' => 1,
+    );
+
+    $query = null;
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        ?>
+        <div class="news-flash-container">
+            <div id="news-flash">
+                <?php
+                $i = 1;
+                while ($query->have_posts()) : $query->the_post(); ?>
+                    <div class="news-flash-<?= $i ?>">
+                        <h3><a href="#<?php //the_permalink();?>"
+                               title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+
+                        <p class="news-flash-text"><?php echo preg_replace("/<p>(.*?)<\/p>/", "$1", get_the_excerpt()); ?></p>
+                        <a class="more" href="#<?php //the_permalink();?>" title="<?php the_title(); ?>">Read more</a>
+                    </div>
+                    <?php
+                    $i++;
+                endwhile;
+                ?>
+
+            </div>
+            <div class="news-nav"></div>
+        </div>
+
+    <?php
+    }
+    wp_reset_query();  // Restore global post data stomped by the_post().
+}
+?>
 
 
 

@@ -82,6 +82,5 @@ get_header(); ?>
             </div><!-- /contactBox -->
         </div>
     </div>
-</div><!-- /gutter -->
 
 <?php get_footer(); ?>

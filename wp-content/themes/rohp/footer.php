@@ -1,4 +1,17 @@
 
+<div class="bottomBar">
+    <a href="/blog/photo-gallery/" class="link"><i class="fa fa-camera-retro"></i></a>
+    <!--a href="#" class="link"><i class="fa fa-file-video-o"></i></a-->
+    <div class="tw-feed">
+        <p class="tw-user">@RafaelH117 - <span>8m</span></p>
+        <p class="tw-text">Going to Richmond Oval? Here's a reading guide for visitors to #SRichmonOval, by <a href="#">@kerrawa http://bit.ly/1vMfPKM</a></p>
+    </div>
+    <a href="#" class="link"><i class="fa fa-facebook"></i></a>
+    <a href="#" class="link"><i class="fa fa-instagram"></i></a>
+</div>
+
+</div><!-- /gutter -->
+
 </div><!-- /pageWrap -->
 
 <?php wp_footer(); ?>
