@@ -102,6 +102,7 @@ h3, h4 {
     display: block;
     position: relative;
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    transform: rotate(0.001deg);
 }
 
 .mainMenu ul li a {
@@ -158,8 +159,8 @@ h3, h4 {
 }*/
 
 .mainMenu ul li:hover ul li a {
-    background-color: transparent;
-    color: #fff;
+    /*background-color: transparent;
+    color: #fff;*/
 }
 
 .mainMenu ul ul ul, .mainMenu ul li:hover ul ul {
@@ -183,8 +184,8 @@ h3, h4 {
     padding-left: 50px;
 }
 .mainMenu ul li:hover ul ul li a {
-    background-color: transparent;
-    color: #fcc700;
+    /*background-color: transparent;
+    color: #fcc700;*/
 }
 
 .mainMenu ul li span.subToggler {
@@ -199,14 +200,16 @@ h3, h4 {
     top:8px;
     width: 34px;
     height: 34px;
+    z-index: -1;
 }
 
 .mainMenu ul ul li span.subToggler {
-    top:2px;
+    top:0px;
+
 }
 
 .mainMenu ul li span.subToggler:hover {
-    background-color: rgba(0, 0, 0, 0.35);
+    /*background-color: rgba(0, 0, 0, 0.35);*/
 }
 
 .mainMenu ul li span.subToggler:before {
@@ -234,6 +237,15 @@ h3, h4 {
     right: 0;
     height: auto !important;
 
+}
+
+
+.mainMenu .current-menu-ancestor > ul, .mainMenu .current-menu-parent > ul {
+    display: block;
+}
+.mainMenu .current-menu-item > a {
+    color: #d35400;
+    background-color: rgba(0, 0, 0, 0.35);
 }
 
 .bottomMenu {

@@ -79,10 +79,10 @@
 
                         </ul>
                     </div>
-                    <div class="textWidget">
+                    <!--div class="textWidget">
                         <p><img src="/wp-content/uploads/2015/08/volleyball-canada.png"></p>
                         <p>Corporis ipsa fugit velit officia unde temporibus est excepturi praesentium eligendi minima, soluta harum nisi quam asperiores dolores voluptatibus alias porro dolor beatae dignissimos assumenda iste laudantium quisquam, ipsam? Reprehenderit exercitationem quas aut nostrum eius ullam cum sed illo dolore soluta facere ratione provident, alias itaque, explicabo, similique sit culpa! A corrupti exercitationem ratione voluptatem nostrum debitis quod sint vel provident.</p>
-                    </div>
+                    </div-->
 
                 </div>
             </div>

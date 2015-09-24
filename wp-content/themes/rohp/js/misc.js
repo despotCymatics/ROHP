@@ -114,9 +114,15 @@
             $('.mainMenu').toggleClass('active');
         });
 
-        $('.subToggler').click(function () {
-            $(this).toggleClass('on').next().next().slideToggle(250);
+        $('.menu-item-has-children > a').click(function (e) {
+            e.preventDefault();
+            $(this).next().slideToggle(250);
+            $(this).prev('.subToggler').toggleClass('on');
         });
+
+        /*$('.subToggler').click(function () {
+            $(this).toggleClass('on').next().next().slideToggle(250);
+        });*/
 
         $('.questionNtoggler').click(function () {
             if ($(this).hasClass('on')) {
