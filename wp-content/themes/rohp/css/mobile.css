@@ -23,7 +23,11 @@
 }
 
 @media (max-width: 1024px) {
-    
+
+    .slider {
+
+    }
+
     .mainMenu, .home .mainMenu {
         background: rgba(34, 34, 34, .98);
     }
@@ -89,7 +93,7 @@
         left: 0;
         bottom: 0;
         width: 260px;
-        overflow-y: scroll;
+        /*overflow-y: scroll;*/
         transform: translate3d(-280px,0,0);
         transition: transform 320ms ease;
     }
@@ -108,11 +112,10 @@
     }
 
     .news-flash-container {
-        width: 100%;
-        right: 0;
+        width: 80%;
         z-index: 0;
-        left: 0;
-        bottom: 30%;
+        left: 10%;
+        bottom: 33%;
 
     }
 
