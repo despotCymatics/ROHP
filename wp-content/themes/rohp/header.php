@@ -98,10 +98,11 @@ ini_set('display_errors', 1);
 
 
     <div class="bottomMenu">
-        <div class="searchBox">
+        <?php echo get_search_form(); ?>
+        <!--div class="searchBox">
             <i class="glyphicon glyphicon-search"></i>
             <input type="search" class="form-control" placeholder="Search" />
-        </div>
+        </div-->
         <!--
         <div class="socialBox">
             <a href="#" class="fb"><i class="fa fa-facebook"></i></a>
@@ -136,11 +137,11 @@ if(is_front_page()) {
                 $i = 1;
                 while ($query->have_posts()) : $query->the_post(); ?>
                     <div class="news-flash-<?= $i ?>">
-                        <h3><a href="#<?php //the_permalink();?>"
+                        <h3><a href="<?php the_permalink();?>"
                                title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 
                         <p class="news-flash-text"><?php echo preg_replace("/<p>(.*?)<\/p>/", "$1", get_the_excerpt()); ?></p>
-                        <a class="more" href="#<?php //the_permalink();?>" title="<?php the_title(); ?>">Read more</a>
+                        <a class="more" href="<?php the_permalink();?>" title="<?php the_title(); ?>">Read more</a>
                     </div>
                     <?php
                     $i++;

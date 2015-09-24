@@ -272,13 +272,23 @@ h3, h4 {
 
 .searchBox i {
     color: #9f9f9f;
-    font-size: 18px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
+    font-size: 21px;
     padding: 10px 12px;
     pointer-events: none;
 }
+
+.searchBox button {
+    background-color: #fff;
+    border: medium none;
+    cursor: pointer;
+    display: block;
+    height: 50px;
+    position: absolute;
+    right: 9px;
+    top: 5px;
+}
+
+
 .socialBox{
     text-align: center;
     width: 152px;
@@ -588,6 +598,22 @@ h4.questionNtoggler:hover:before {
     display: block;
 }
 
+article  {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-links * {
+    padding: 5px;
+    background-color: #eee;
+    font-weight: 600;
+}
+
+.nav-links .current {
+    background: #ff8930;
+    color: #fff;
+}
+
 /* Sidebar */
 
 .sidebar {
@@ -735,7 +761,7 @@ h4.questionNtoggler:hover:before {
     position: relative;
     /*z-index: 5;*/
     display: inline-block;
-    background-color: #fcfcfc;
+    background-color: #eee;
     width: 100%;
     margin-bottom: 20px;
 }
@@ -764,11 +790,11 @@ h4.questionNtoggler:hover:before {
 }
 
 .pageMenu ul li a {
-    color: #222;
+    color: #333;
     display: block;
-    font-family: NeoSansStdLight,arial,sans-serif;
+    font-family: NeoSansStdBold,arial,sans-serif;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: normal;
     line-height: 40px;
     padding: 0 15px;
     vertical-align: middle;
