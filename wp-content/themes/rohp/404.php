@@ -18,7 +18,7 @@
         <div class="row no-margin no-padding">
             <div class="col-sm-8">
                 <div class="articleBody">
-                  <p><img src="<?=get_template_directory_uri()?>/images/404.png" </p>
+                  <p><img src="<?=get_template_directory_uri()?>/images/404.png"> </p>
 
                 </div>
             </div>

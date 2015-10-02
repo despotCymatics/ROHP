@@ -47,7 +47,7 @@
         top:30px;
         left: 260px;
         display: block;
-        position: absolute;
+        position: fixed;
         z-index: 2;
         cursor: pointer;
         transform: translate3d(-260px,0,0);

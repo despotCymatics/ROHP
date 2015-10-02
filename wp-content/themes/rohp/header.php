@@ -6,6 +6,7 @@ ini_set('display_errors', 1);
 <!DOCTYPE html>
 <html>
 <head lang="en">
+    <meta name="robots" content="noindex, nofollow">
     <title><?php wp_title( '|', true, 'right' ); ?></title>
 
     <meta name="Author" content="Richmond Oval High Performance">
@@ -54,14 +55,45 @@ ini_set('display_errors', 1);
 <div class="pageWrap">
 <header></header>
 <div class="menuToggler"></div>
-    <?php if(is_front_page()) { ?>
+
+    <?php if(is_front_page()) {
+
+        $args = array(
+        'post_type' => 'Home Slides',
+        'post_status' => 'publish',
+        'posts_per_page' => 10,
+        'caller_get_posts' => 1,
+        );
+
+        $query = null;
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) { ?>
+
         <div class="slider">
             <div class="slick-slideshow">
-                <div class="slide" style="background: url('<?=get_template_directory_uri()?>/images/slide01.jpg')"></div>
-                <div class="slide" style="background: url('<?=get_template_directory_uri()?>/images/slide02.jpg')"></div>
-                <div class="slide" style="background: url('<?=get_template_directory_uri()?>/images/slide03.jpg')"></div>
+                <?php while ($query->have_posts()) {
+
+                    $query->the_post();
+                    if ( has_post_thumbnail() ) {
+                        $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
+                ?>
+                    <div class="slide" style="background: url('<?php echo $image[0];?>')"></div>
+
+                <?php
+                    }
+                }
+                ?>
+
             </div>
         </div>
+
+        <?php }
+
+        wp_reset_query();
+
+        ?>
+
     <?php } ?>
 
 <div class="mainMenu">
