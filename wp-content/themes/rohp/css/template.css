@@ -31,6 +31,10 @@ h3, h4 {
     width: 100%;
 }
 
+.table-content {
+    overflow-x: scroll;
+}
+
 /* Bg Slider */
 .slider {
     height: 100%;
@@ -249,7 +253,7 @@ h3, h4 {
 .mainMenu .slimScrollDiv .scrollable {
     position: absolute;
     top: 0;
-    bottom: 270px;
+    bottom: 260px;
     left: 0;
     right: 0;
     height: auto !important;
@@ -404,6 +408,7 @@ p.copyright {
 .bottomBar a.link i{
     font-size: 30px;
     pointer-events: none;
+    display: block;
 }
 
 .bottomBar a.link:hover {
@@ -429,6 +434,10 @@ p.copyright {
     left: 30px;
     font: normal normal normal 35px/1 FontAwesome;
     color: #55acee;
+}
+
+.tw-feed a:hover {
+    color: #d35400;
 }
 
 .tw-feed p{
@@ -540,7 +549,7 @@ p.copyright {
     bottom: 0;
 }
 .featuredImage {
-    max-height: 360px;
+    height: 320px;
     overflow-y: hidden;
     background-size: cover;
     background-position: center center;
@@ -647,6 +656,29 @@ h4.questionNtoggler:hover:before {
     margin: 20px 0;
     display: block;
 }
+
+.articleBody .row {
+    /*margin-right: 0;
+    margin-left: 0;*/
+    margin-bottom: 20px;
+}
+
+.articleBody ul {
+    margin-left: 20px;
+}
+
+.articleBody a:hover {
+    text-decoration: underline;
+}
+
+.articleBody a img {
+    opacity: 0.9;
+}
+
+.articleBody a:hover img {
+    opacity: 1;
+}
+
 
 article  {
     margin-bottom: 20px;
@@ -800,11 +832,6 @@ article  {
     /*margin-bottom: -20px;*/
 }
 
-.articleBody .row {
-    margin-right: 0;
-    margin-left: 0;
-}
-
 /* Inner menu */
 
 .pageMenu {
@@ -814,7 +841,7 @@ article  {
     background-color: #eee;
     width: 100%;
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 10px 10px 0 10px;
 }
 
 
@@ -847,9 +874,10 @@ article  {
     font-family: NeoSansStdBold,arial,sans-serif;
     font-size: 16px;
     font-weight: normal;
-    line-height: 40px;
-    padding: 0 15px;
+    line-height: 32px;
+    padding: 0 12px;
     vertical-align: middle;
+    margin: 0 10px 10px 0;
 }
 
 .pageMenu ul li:hover a, .pageMenu ul li a.active, .pageMenu ul li:hover a, .pageMenu .current_page_item a {

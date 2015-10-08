@@ -161,6 +161,8 @@
             color: '#ddd'
         });
 
+        $('table').wrap('<div class="table-content"></div>');
+
 
     });
 

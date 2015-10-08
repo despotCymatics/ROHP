@@ -6,7 +6,7 @@ ini_set('display_errors', 1);
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta name="robots" content="noindex, nofollow">
+
     <title><?php wp_title( '|', true, 'right' ); ?></title>
 
     <meta name="Author" content="Richmond Oval High Performance">
