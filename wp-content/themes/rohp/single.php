@@ -29,41 +29,8 @@
             <div class="col-sm-8">
                 <div class="articleBody">
                     <?php if ( have_posts() ) : while( have_posts() ) : the_post();
-                        $innerMenu = get_post_meta(get_the_ID(), "meta-box-dropdown", true);
-                        if($innerMenu != "No Menu") { ?>
-                        <div class="pageMenu">
-                            <?php 
-                            $args = array(
-                                'theme_location'  => '',
-                                'menu'            => $innerMenu,
-                                'container'       => '',
-                                'container_class' => '',
-                                'container_id'    => '',
-                                'menu_class'      => 'inner-menu',
-                                'menu_id'         => '',
-                                'echo'            => true,
-                                'fallback_cb'     => 'wp_page_menu',
-                                'before'          => '',
-                                'after'           => '',
-                                'link_before'     => '',
-                                'link_after'      => '',
-                                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                                'depth'           => 2,
-                                'walker'          => ''
-                            );
-
-            wp_nav_menu( $args );
-
-                            ?>
-
-
-
-                        </div>
-                        <?php } ?>
-                        <?php the_content();
+                        the_content();
                     endwhile; endif; ?>
-
-
                 </div>
             </div>
             <div class="col-sm-4">

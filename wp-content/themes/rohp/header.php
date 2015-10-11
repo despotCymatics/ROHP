@@ -6,6 +6,7 @@ ini_set('display_errors', 1);
 <!DOCTYPE html>
 <html>
 <head lang="en">
+
     <title><?php wp_title( '|', true, 'right' ); ?></title>
 
     <meta name="Author" content="Richmond Oval High Performance">
@@ -47,21 +48,62 @@ ini_set('display_errors', 1);
     <script type="text/javascript" src="js/selectivizr-min.js"></script>
     <noscript><link rel="stylesheet" href="[fallback css]" /></noscript>
     <![endif]-->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+        ga('create', 'UA-68610770-2', 'auto');
+        ga('send', 'pageview');
+
+    </script>
 </head>
+
 <body <?php body_class(); ?>>
 <div class="loader"><span></span></div>
 <div class="pageWrap">
 <header></header>
 <div class="menuToggler"></div>
-    <?php if(is_front_page()) { ?>
+
+    <?php if(is_front_page()) {
+
+        $args = array(
+        'post_type' => 'Home Slides',
+        'post_status' => 'publish',
+        'posts_per_page' => 10,
+        'caller_get_posts' => 1,
+        );
+
+        $query = null;
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) { ?>
+
         <div class="slider">
             <div class="slick-slideshow">
-                <div class="slide" style="background: url('<?=get_template_directory_uri()?>/images/slide01.jpg')"></div>
-                <div class="slide" style="background: url('<?=get_template_directory_uri()?>/images/slide02.jpg')"></div>
-                <div class="slide" style="background: url('<?=get_template_directory_uri()?>/images/slide03.jpg')"></div>
+                <?php while ($query->have_posts()) {
+
+                    $query->the_post();
+                    if ( has_post_thumbnail() ) {
+                        $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
+                ?>
+                    <div class="slide" style="background: url('<?php echo $image[0];?>')"></div>
+
+                <?php
+                    }
+                }
+                ?>
+
             </div>
         </div>
+
+        <?php }
+
+        wp_reset_query();
+
+        ?>
+
     <?php } ?>
 
 <div class="mainMenu">
@@ -98,10 +140,11 @@ ini_set('display_errors', 1);
 
 
     <div class="bottomMenu">
-        <div class="searchBox">
+        <?php echo get_search_form(); ?>
+        <!--div class="searchBox">
             <i class="glyphicon glyphicon-search"></i>
             <input type="search" class="form-control" placeholder="Search" />
-        </div>
+        </div-->
         <!--
         <div class="socialBox">
             <a href="#" class="fb"><i class="fa fa-facebook"></i></a>
@@ -136,11 +179,11 @@ if(is_front_page()) {
                 $i = 1;
                 while ($query->have_posts()) : $query->the_post(); ?>
                     <div class="news-flash-<?= $i ?>">
-                        <h3><a href="#<?php //the_permalink();?>"
+                        <h3><a href="<?php the_permalink();?>"
                                title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 
                         <p class="news-flash-text"><?php echo preg_replace("/<p>(.*?)<\/p>/", "$1", get_the_excerpt()); ?></p>
-                        <a class="more" href="#<?php //the_permalink();?>" title="<?php the_title(); ?>">Read more</a>
+                        <a class="more" href="<?php the_permalink();?>" title="<?php the_title(); ?>">Read more</a>
                     </div>
                     <?php
                     $i++;
