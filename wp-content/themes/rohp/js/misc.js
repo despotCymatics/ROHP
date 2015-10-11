@@ -143,6 +143,10 @@
 
         $('.current-menu-ancestor').addClass('open');
 
+        $('.coaches').parents('ul.sub-menu').hide();
+        $('.coaches').parents('.current-menu-ancestor').removeClass('open');
+
+
         $('.questionNtoggler').click(function () {
             if ($(this).hasClass('on')) {
                 $(this).removeClass('on').next().slideUp(250);
