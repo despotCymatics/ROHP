@@ -30,7 +30,7 @@ function rohp_scripts_styles() {
 	wp_register_script('rohp-jquery', (get_template_directory_uri() . '/js/jquery-1.11.1.min.js'), false, '1.11.1');
 
 	// Adds JavaScript for handling the navigation menu hide-and-show behavior.
-    //wp_enqueue_script( 'rohp-prefixfree', (get_template_directory_uri() . '/js/prefixfree.min.js'), array(), false, false );
+    wp_enqueue_script( 'rohp-prefixfree', (get_template_directory_uri() . '/js/prefixfree.min.js'), array(), false, false );
 	wp_enqueue_script( 'rohp-modernizr.custom', get_template_directory_uri() . '/js/modernizr.custom.js', array(), false, false );
     wp_enqueue_script( 'rohp-jquery' );
 	wp_enqueue_script( 'rohp-jquery.slimscroll', get_template_directory_uri() . '/js/jquery.slimscroll.min.js', array(), false, true );
@@ -62,9 +62,7 @@ function menu_select_markup($object)
  
     ?>
         <div>
- 		<?php $option_values = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
- 		
- 		?>
+ 		<?php $option_values = get_terms( 'nav_menu', array( 'hide_empty' => true ) ); ?>
 				
             <!--label for="meta-box-dropdown">Select:</label-->
             <select name="meta-box-dropdown">

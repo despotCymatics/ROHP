@@ -51,6 +51,7 @@
     .menuToggler {
         top:30px;
         left: 260px;
+
         display: block;
         position: fixed;
         z-index: 2;
@@ -95,12 +96,16 @@
     .mainMenu {
         position: fixed;
         top: 0;
-        left: 0;
+        left: 0px;
         bottom: 0;
         width: 260px;
         /*overflow-y: scroll;*/
         transform: translate3d(-280px,0,0);
         transition: transform 320ms ease;
+    }
+
+    .mainMenu.active {
+        transform: translate3d(0,0,0);
     }
 
     .mainMenu .logo {
@@ -142,6 +147,7 @@
         background: rgba(45, 45, 45, 0.9) none repeat scroll 0 0;
         border-bottom: 1px solid #525252;
         height: auto;
+        overflow-x: hidden;
     }
 
     .bottomBar a.link {
@@ -233,6 +239,10 @@
 
     .content {
         padding: 20px 0;
+    }
+
+    .moreText {
+        width: 250px;
     }
 }
 

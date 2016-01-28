@@ -143,16 +143,20 @@
 
         $('.current-menu-ancestor').addClass('open');
 
-        $('.coaches').parents('ul.sub-menu').hide();
-        $('.coaches').parents('.current-menu-ancestor').removeClass('open');
+        if(window.location.href.indexOf('/about-us/coaches/') > -1){
+            $('.coaches').parents('ul.sub-menu').hide();
+            $('.coaches').parents('.current-menu-ancestor').removeClass('open');
+        }
 
+        $('.showMoreToggler').click(function(){
 
-        $('.questionNtoggler').click(function () {
-            if ($(this).hasClass('on')) {
+            //$(this).toggleClass('on').next().slideToggle(250);
+
+           if($(this).hasClass('on')) {
                 $(this).removeClass('on').next().slideUp(250);
             }
             else {
-                $('.questionNtoggler').removeClass('on').next().slideUp(250);
+                $('.showMoreToggler').removeClass('on').next().slideUp(250);
                 $(this).addClass('on').next().slideDown(250);
             }
         });

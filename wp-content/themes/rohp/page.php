@@ -56,29 +56,38 @@
 
                             ?>
 
-
-
                         </div>
                         <?php } ?>
                         <?php the_content();
                     endwhile; endif; ?>
 
-
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="sidebar">
+                    <?php if(get_field('qlinks') != '') { ?>
+
+                        <div class="quick-links">
+                            <h4><i class="fa fa-link"></i> Quick links</h4>
+                            <ul>
+                                <?php
+                                $qlinks = get_field('qlinks');
+                                echo do_shortcode($qlinks);
+                                ?>
+                            </ul>
+                        </div>
+                    <?php } else { ?>
                     <div class="quick-links">
                         <h4><i class="fa fa-link"></i> Quick links</h4>
                         <ul>
-                            <li><a href="#" title="Become a Member">Become a Member</a></li>
-                            <li><a href="#" title="Drop-in Schedules">Drop-in Schedules</a></li>
-                            <li><a href="#" title="Membership &amp; Admission Rates">Membership &amp; Admission Rates</a></li>
-                            <li><a href="#" title="Become a Member">About Us</a></li>
-                            <li><a href="#" title="Become a Member">Explore</a></li>
-
+                            <li><a href="/contact" title="Contact Us">Contact Us</a></li>
+                            <li><a href="/about-us/team" title="High Performance Team ">High Performance Team</a></li>
+                            <li><a href="/about-us/training-philosophy/" title="Training Philosophy">Training Philosophy</a></li>
+                            <li><a href="/strength-conditioning/sc-individual-training/individual-training/" title="Private Strength & Conditioning Training">Private Strength & Conditioning Training</a></li>
                         </ul>
                     </div>
+                        <?php } ?>
+
                     <!--div class="textWidget">
                         <p><img src="/wp-content/uploads/2015/08/volleyball-canada.png"></p>
                         <p>Corporis ipsa fugit velit officia unde temporibus est excepturi praesentium eligendi minima, soluta harum nisi quam asperiores dolores voluptatibus alias porro dolor beatae dignissimos assumenda iste laudantium quisquam, ipsam? Reprehenderit exercitationem quas aut nostrum eius ullam cum sed illo dolore soluta facere ratione provident, alias itaque, explicabo, similique sit culpa! A corrupti exercitationem ratione voluptatem nostrum debitis quod sint vel provident.</p>

@@ -20,7 +20,7 @@ add_shortcode( 'faq', 'faq_shortcode' );
 function show_more_shortcode( $atts, $content ){
 
     extract( shortcode_atts( array(
-        'title' => 'Title',
+        'title' => 'More',
     ), $atts, 'show_more' ) );
 
     $result = '<h4 class="showMoreToggler">'.$title.'</h4>
@@ -39,7 +39,7 @@ function col_shortcode( $atts, $content ){
         'width' => '12',
     ), $atts, 'col' ) );
 
-    $result = '<div class="col col-md-'.$width.'">'.$content.'</div>';
+    $result = '<div class="col col-sm-'.$width.'">'.do_shortcode(wpautop($content)).'</div>';
 
 
     return $result;

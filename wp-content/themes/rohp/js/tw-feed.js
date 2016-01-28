@@ -221,7 +221,7 @@ var config1 = {
     "maxTweets": 1,
     "enableLinks": true,
     "showPermalinks": false,
-    "showRetweet":false,
+    "showRetweet":true,
     "showInteraction": false,
     "showImages":false,
     "showUser": true
