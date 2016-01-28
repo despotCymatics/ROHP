@@ -482,7 +482,9 @@ p.copyright {
 .tw-feed ul li .user img {
     width: 18px;
 }
-
+.tw-feed .tweet > img {
+    width: 14px;
+}
 
 /* News Flash Home */
 
