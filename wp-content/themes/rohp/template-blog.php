@@ -41,30 +41,26 @@
 
                     <!-- Blog post -->
                     <div class="post-item" id="post-<?php the_ID(); ?>">
-
-                        <p>
-                            <?php
-                                $categories = get_the_category();
-                                $separator = ' ';
-                                $output = '';
-                                if ( ! empty( $categories ) ) {
-                                    foreach( $categories as $category ) {
-                                        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
-                                    }
-                                    echo trim( $output, $separator );
-                                }
-                            ?>
-                        </p>
                         <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-
-                        <div class="introtext">
-                            <?php echo substr(get_the_excerpt(), 0 , 256)."..."; ?>
-                        </div>
-                        <a href="<?php the_permalink(); ?>" class="more">
-                            Read More
-                            
-                        </a>
                         <hr>
+                        <span class="post-date"><?php echo get_the_date(); ?> | </span>
+                        <span class="post-author">POST BY <?php echo get_the_author(); ?> | </span>
+                        <span class="post-cat">IN
+
+                        <?php
+                            $categories = get_the_category();
+                            $separator = ' ';
+                            $output = '';
+                            if ( ! empty( $categories ) ) {
+                                foreach( $categories as $category ) {
+                                    $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+                                }
+                                echo trim( $output, $separator );
+                            }
+                        ?>
+                       </span><br>
+                       <div class="introtext"><?php echo substr(get_the_excerpt(), 0 , 256)."..."; ?></div>
+                       <a href="<?php the_permalink(); ?>" class="more">Read More</a>
                     </div>
                     <!-- Blog post end -->
                     <?php endwhile;?>
