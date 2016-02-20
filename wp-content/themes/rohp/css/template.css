@@ -1105,3 +1105,33 @@ tr:first-child td:first-child{
 tr:first-child td:last-child{
     border-width:0px 0px 1px 1px;
 }
+
+/* Blog */
+
+.post-item a,
+.post-author,
+.nav-links a{
+    color: #ff8930;
+}
+.post-divider{
+    background-color: #dedede;
+    height: 1px;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+}
+.post-intro{
+    margin: 10px 0;
+}
+.post-item span{
+    font-size: 12px;
+}
+.post-item{
+    margin-top: 20px;
+}
+.post-item h2{
+    margin: 0 0 10px;
+}
+.post-more{
+    font-size: 12px;
+}
+
