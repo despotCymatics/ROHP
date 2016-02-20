@@ -1110,7 +1110,9 @@ tr:first-child td:last-child{
 
 .post-item a,
 .post-author,
-.nav-links a{
+.nav-links a,
+.post-cat a,
+.next-prev a{
     color: #ff8930;
 }
 .post-divider{
@@ -1134,4 +1136,24 @@ tr:first-child td:last-child{
 .post-more{
     font-size: 12px;
 }
-
+.post-title h1{
+    margin-bottom: 10px;
+}
+.sidebar .quick-links>li.categories{
+    list-style-type: none;
+}
+.next-prev{
+    margin-top: 60px;
+}
+.prev-post a, .next-post a{
+    font-size: 20px
+}
+.prev-post > span.title{
+    padding-left: 15px;
+}
+.next-post a{
+    float: right;
+}
+.next-post > span.title{
+    padding-right: 15px;
+}

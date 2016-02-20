@@ -1,42 +1,38 @@
 <?php
 /**
- * Template Name: Blog
+ * The template for displaying archive pages
  */
 ?>
 <?php get_header(); ?>
 <?php
-$args = array(
-    'posts_per_page' => 5,
+
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+if (is_category( )) {
+    $cat = get_query_var('cat');
+    $yourcat = get_category ($cat);
+    $ctg = $yourcat->slug;
+}
+
+$args= array(
+    'category_name' => $ctg,
     'paged' => $paged
-
 );
-
-$wp_query = new WP_Query($args);
+query_posts($args);
 ?>
     <div class="gutter">
-
-<?php
-if ( has_post_thumbnail() ) :
-    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-    ?>
-    <div class="featuredImage" style="background-image: url('<?php echo $image[0];?>')">
-        <?php //the_post_thumbnail(); ?>
-        <!--img src="images/featured.jpg"-->
-    </div>
-<?php endif; ?>
 
     <div class="content">
         <div class="row no-margin no-padding">
             <div class="col-lg-12">
                 <div class="pageTitle">
-                    <h1><?php the_title(); ?></h1>
+                    <h1>Blog - <?php single_cat_title(); ?></h1>
                 </div>
             </div>
         </div>
         <div class="row no-margin no-padding">
             <div class="col-sm-8">
                 <div class="articleBody">
-                    <?php if($wp_query->have_posts()): while($wp_query->have_posts()): $wp_query->the_post(); ?>
+                    <?php if(have_posts()):while ( have_posts() ) : the_post(); ?>
 
 
                         <!-- Blog post -->
