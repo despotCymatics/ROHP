@@ -40,30 +40,43 @@ if ( has_post_thumbnail() ) :
 
 
                         <!-- Blog post -->
-                        <div class="post-item" id="post-<?php the_ID(); ?>">
-                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                            <div class="post-divider"></div>
-                            <span class="post-date"><?php echo get_the_date(); ?> | </span>
-                            <span>Post by</span> <span class="post-author"><?php echo get_the_author(); ?></span> |
-                            <span>In</span><span class="post-cat">
+                        <div class="col-md-6">
+                            <div class="post-item" id="post-<?php the_ID(); ?>">
+                                <?php if ( has_post_thumbnail() ) {
+
+                                    $url = get_the_post_thumbnail( $post->ID, 'large');?>
+                                    <a href="<?php the_permalink(); ?>"><?php echo $url; ?></a>
+                                <?php }  ?>
+                                <div class="post-title">
+                                    <h2>
+                                        <?php
+                                        $title = get_the_title();
+                                        if(strlen($title) > 42){echo substr(get_the_title(), 0 , 42)."...";}
+                                        else{echo $title;}
+                                        ?>
+                                    </h2>
+                                </div>
+                                <a href="<?php the_permalink(); ?>" class="post-more">read more >></a>
+                                <div class="post-divider"></div>
+                                <!--
+                         <span class="post-date"><?php echo get_the_date(); ?> | </span>
+                        <span>Post by</span> <span class="post-author"><?php echo get_the_author(); ?></span> |
+                        <span>In</span><span class="post-cat">
 
                         <?php
-                        $categories = get_the_category();
-                        $separator = ', ';
-                        $output = '';
-                        if ( ! empty( $categories ) ) {
-                            foreach( $categories as $category ) {
-                                $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
-                            }
-                            echo trim( $output, $separator );
-                        }
-                        ?>
-                       </span><br>
-                            <div class="post-intro">
-                                <?php echo substr(get_the_excerpt(), 0 , 256)."..."; ?>
-                                <a href="<?php the_permalink(); ?>" class="post-more">read more >></a>
-                            </div>
+                                $categories = get_the_category();
+                                $separator = ', ';
+                                $output = '';
+                                if ( ! empty( $categories ) ) {
+                                    foreach( $categories as $category ) {
+                                        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+                                    }
+                                    echo trim( $output, $separator );
+                                }
+                                ?>
+                       </span><br>-->
 
+                            </div>
                         </div>
                         <!-- Blog post end -->
                     <?php endwhile;?>
