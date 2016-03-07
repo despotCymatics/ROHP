@@ -26,7 +26,7 @@
                 </div>
                 <?php if ( have_posts() ) : while( have_posts() ) : the_post(); ?>
                 <span class="post-date"><?php echo get_the_date(); ?> | </span>
-                <span>Post by</span> <span class="post-author"><?php echo get_the_author(); ?></span> |
+                <span>Post by</span> <span class="post-author"><?php echo the_field('article_author_name'); ?></span> |
                 <span>In</span>
                 <span class="post-cat">
                 <?php
@@ -43,7 +43,7 @@
                 </span>
             </div>
         </div>
-        <div class="row no-margin no-padding">
+        <div class="row no-margin single-content">
             <div class="col-sm-8">
                 <div class="articleBody">
 

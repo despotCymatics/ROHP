@@ -1135,15 +1135,15 @@ tr:first-child td:last-child{
     font-size: 12px;
 }
 .post-item{
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .post-item img{
     width: 100%;
     height: 14vw;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 .post-item h2{
-    margin: 0 0 10px;
+    margin-top: 15px;
     font-size: 130%;
 }
 .post-more{
@@ -1170,4 +1170,7 @@ tr:first-child td:last-child{
 .next-post > span.title{
     padding-right: 15px;
     float: right;
+}
+.single-content{
+    padding-top: 30px;
 }

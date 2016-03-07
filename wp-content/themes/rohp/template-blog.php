@@ -47,6 +47,19 @@ if ( has_post_thumbnail() ) :
                                     $url = get_the_post_thumbnail( $post->ID, 'large');?>
                                     <a href="<?php the_permalink(); ?>"><?php echo $url; ?></a>
                                 <?php }  ?>
+                                <span class="post-date"><?php echo get_the_date(); ?> | </span><span>In</span><span class="post-cat">
+                            <?php
+                            $categories = get_the_category();
+                            $separator = ', ';
+                            $output = '';
+                            if ( ! empty( $categories ) ) {
+                                foreach( $categories as $category ) {
+                                    $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+                                }
+                                echo trim( $output, $separator );
+                            }
+                            ?>
+                           </span>
                                 <div class="post-title">
                                     <h2>
                                         <?php
@@ -56,25 +69,17 @@ if ( has_post_thumbnail() ) :
                                         ?>
                                     </h2>
                                 </div>
+                            <span class="post-intro">
+                                <?php echo substr(get_the_excerpt(), 0 , 180)."..."; ?>
+                            </span>
                                 <a href="<?php the_permalink(); ?>" class="post-more">read more >></a>
                                 <div class="post-divider"></div>
-                                <!--
-                         <span class="post-date"><?php echo get_the_date(); ?> | </span>
-                        <span>Post by</span> <span class="post-author"><?php echo get_the_author(); ?></span> |
-                        <span>In</span><span class="post-cat">
 
-                        <?php
-                                $categories = get_the_category();
-                                $separator = ', ';
-                                $output = '';
-                                if ( ! empty( $categories ) ) {
-                                    foreach( $categories as $category ) {
-                                        $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
-                                    }
-                                    echo trim( $output, $separator );
-                                }
-                                ?>
-                       </span><br>-->
+                                <!--<span>Author </span> <span class="post-author"><?php echo the_field('article_author_name'); ?></span>
+                         |
+
+
+                        <br>-->
 
                             </div>
                         </div>
