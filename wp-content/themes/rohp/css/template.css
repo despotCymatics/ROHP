@@ -1105,3 +1105,72 @@ tr:first-child td:first-child{
 tr:first-child td:last-child{
     border-width:0px 0px 1px 1px;
 }
+
+/* Blog */
+
+.post-item a,
+.post-author,
+.nav-links a,
+.post-cat a,
+.next-prev a{
+    color: #ff8930;
+}
+.post-item .post-title{
+    height: 40px;
+}
+.post-item .post-title h2{
+    color: #000;
+
+}
+.post-divider{
+    background-color: #dedede;
+    height: 1px;
+    width: 100%;
+    margin: 5px 0px 10px 0px;
+}
+.post-intro{
+    margin: 10px 0;
+}
+.post-item span{
+    font-size: 12px;
+}
+.post-item{
+    margin-bottom: 40px;
+}
+.post-item img{
+    width: 100%;
+    height: 14vw;
+    margin-bottom: 5px;
+}
+.post-item h2{
+    margin-top: 15px;
+    font-size: 130%;
+}
+.post-more{
+    font-size: 12px;
+}
+.post-title h1{
+    margin-bottom: 10px;
+}
+.sidebar .quick-links>li.categories{
+    list-style-type: none;
+}
+.next-prev{
+    margin-top: 60px;
+}
+.prev-post a, .next-post a{
+    font-size: 20px
+}
+.prev-post > span.title{
+    padding-left: 15px;
+}
+.next-post a{
+    float: right;
+}
+.next-post > span.title{
+    padding-right: 15px;
+    float: right;
+}
+.single-content{
+    padding-top: 30px;
+}
