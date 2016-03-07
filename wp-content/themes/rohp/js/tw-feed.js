@@ -140,6 +140,7 @@
                     a = c.length;
                     g = 0;
                     f = document.getElementById(B);
+                    console.log(c[g]);
                     for (h = "<ul>"; g < a;) h += "<li>" + c[g] + "</li>", g++;
                     f.innerHTML = h + "</ul>"
                 } else A(c);
@@ -307,6 +308,7 @@ var config5 = {
 };
 
 function handleTweets(tweets) {
+    console.log(tweets);
     var x = tweets.length;
     var n = 0;
     var element = document.getElementById('example5');

@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 <?php
 $args = array(
-    'posts_per_page' => 5,
+    'posts_per_page' => 9,
     'paged' => $paged
 
 );
@@ -34,20 +34,23 @@ if ( has_post_thumbnail() ) :
             </div>
         </div>
         <div class="row no-margin no-padding">
-            <div class="col-sm-8">
+            <div class="col-sm-12">
                 <div class="articleBody">
-                    <?php if($wp_query->have_posts()): while($wp_query->have_posts()): $wp_query->the_post(); ?>
-
-
+                    <div class="row no-margin no-padding" style="margin-bottom: 0">
+                    <?php
+                    $postCount = 1;
+                    if($wp_query->have_posts()): while($wp_query->have_posts()): $wp_query->the_post(); ?>
                         <!-- Blog post -->
-                        <div class="col-md-6">
+
+                        <div class="col-md-4">
                             <div class="post-item" id="post-<?php the_ID(); ?>">
                                 <?php if ( has_post_thumbnail() ) {
 
                                     $url = get_the_post_thumbnail( $post->ID, 'large');?>
                                     <a href="<?php the_permalink(); ?>"><?php echo $url; ?></a>
                                 <?php }  ?>
-                                <span class="post-date"><?php echo get_the_date(); ?> | </span><span>In</span><span class="post-cat">
+                                <div class="post-data">
+                                    <span class="post-date"><?php echo get_the_date(); ?> | </span><span>In</span><span class="post-cat">
                             <?php
                             $categories = get_the_category();
                             $separator = ', ';
@@ -60,32 +63,33 @@ if ( has_post_thumbnail() ) :
                             }
                             ?>
                            </span>
-                                <div class="post-title">
-                                    <h2>
-                                        <?php
-                                        $title = get_the_title();
-                                        if(strlen($title) > 42){echo substr(get_the_title(), 0 , 42)."...";}
-                                        else{echo $title;}
-                                        ?>
-                                    </h2>
-                                </div>
+                            <div class="post-title">
+                                <h2>
+                                    <?php
+                                    $title = get_the_title();
+                                    if(strlen($title) > 42){echo substr(get_the_title(), 0 , 42)."...";}
+                                    else{echo $title;}
+                                    ?>
+                                </h2>
+                            </div>
                             <span class="post-intro">
                                 <?php echo substr(get_the_excerpt(), 0 , 180)."..."; ?>
-                            </span>
-                                <a href="<?php the_permalink(); ?>" class="post-more">read more >></a>
-                                <div class="post-divider"></div>
-
-                                <!--<span>Author </span> <span class="post-author"><?php echo the_field('article_author_name'); ?></span>
-                         |
+                            </span><br>
+                                    <a href="<?php the_permalink(); ?>" class="post-more">read more >></a>
+                                </div>
 
 
-                        <br>-->
+                                <span class="post-author"><?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?></span>
 
                             </div>
                         </div>
+                        <?php if($postCount%3 == 0) echo '</div><div class="row no-margin no-padding" style="margin-bottom: 0">'; ?>
                         <!-- Blog post end -->
-                    <?php endwhile;?>
-
+                    <?php
+                        $postCount++;
+                        endwhile;
+                        echo '</div>';
+                    ?>
 
                         <?php
                         the_posts_pagination( array(
@@ -100,10 +104,9 @@ if ( has_post_thumbnail() ) :
 
                 </div>
             </div>
-            <div class="col-sm-4">
+            <!--div class="col-sm-4">
                 <div class="sidebar">
                     <div class="quick-links">
-
                         <?php
                         $args = array(
                             'show_option_all'    => '',
@@ -137,9 +140,7 @@ if ( has_post_thumbnail() ) :
                     </div>
 
                 </div>
-                <div class="sidebar">
-
-
+                <div-- class="sidebar">
                     <?php if(get_field('qlinks') != '') { ?>
 
                         <div class="quick-links">
@@ -162,16 +163,10 @@ if ( has_post_thumbnail() ) :
                             </ul>
                         </div>
                     <?php } ?>
-
-                    <!--div class="textWidget">
-                        <p><img src="/wp-content/uploads/2015/08/volleyball-canada.png"></p>
-                        <p>Corporis ipsa fugit velit officia unde temporibus est excepturi praesentium eligendi minima, soluta harum nisi quam asperiores dolores voluptatibus alias porro dolor beatae dignissimos assumenda iste laudantium quisquam, ipsam? Reprehenderit exercitationem quas aut nostrum eius ullam cum sed illo dolore soluta facere ratione provident, alias itaque, explicabo, similique sit culpa! A corrupti exercitationem ratione voluptatem nostrum debitis quod sint vel provident.</p>
-                    </div-->
-
-                </div>
+                </div-->
             </div>
         </div>
-    </div>
+
 
 
 <?php get_footer(); ?>

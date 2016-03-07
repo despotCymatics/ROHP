@@ -1115,6 +1115,10 @@ tr:first-child td:last-child{
 .next-prev a{
     color: #ff8930;
 }
+.post-item .post-data {
+    padding-right: 6px;
+    padding-left: 6px;
+}
 .post-item .post-title{
     height: 40px;
 }
@@ -1136,6 +1140,7 @@ tr:first-child td:last-child{
 }
 .post-item{
     margin-bottom: 40px;
+    border: 1px solid #ddd;
 }
 .post-item img{
     width: 100%;
@@ -1147,7 +1152,20 @@ tr:first-child td:last-child{
     font-size: 130%;
 }
 .post-more{
+    display: block;
     font-size: 12px;
+    margin: 8px 0;
+    font-weight: 600;
+}
+
+.post-item span.post-author img{
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    height: 45px;
+    position: absolute;
+    right: 24px;
+    top: 11.6vw;
+    width: 45px;
 }
 .post-title h1{
     margin-bottom: 10px;
