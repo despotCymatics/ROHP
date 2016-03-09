@@ -7,19 +7,14 @@
 
 <div class="gutter">
 
-    <?php
-    if ( has_post_thumbnail() ) :
-        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-        ?>
-        <div class="featuredImage" style="background-image: url('<?php echo $image[0];?>')">
-            <?php //the_post_thumbnail(); ?>
-            <!--img src="images/featured.jpg"-->
-        </div>
-    <?php endif; ?>
-
-    <div class="content">
-        <div class="row no-margin no-padding">
+    <div class="content blog-single">
+        <!--div class="row no-margin no-padding">
             <div class="col-lg-12">
+
+            </div>
+        </div-->
+        <div class="row no-margin single-content">
+            <div class="col-sm-8">
                 <div class="post-title">
                     <h1><?php the_title(); ?></h1>
                     <div class="post-divider"></div>
@@ -41,10 +36,13 @@
                 }
                 ?>
                 </span>
-            </div>
-        </div>
-        <div class="row no-margin single-content">
-            <div class="col-sm-8">
+                <?php
+                if ( has_post_thumbnail() ) :
+                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+                    ?>
+                    <div class="featuredImage"><?php the_post_thumbnail(); ?></div>
+
+                <?php endif; ?>
                 <div class="articleBody">
 
                     <?php the_content(); endwhile; endif; ?>
@@ -72,7 +70,39 @@
 
             </div>
             <div class="col-sm-4">
+                <div class="side-author">
+                    <span class="author-image"><?php echo get_avatar( get_the_author_meta( 'ID' ), 82 ); ?></span>
+                    <span class="author-name"><?php echo get_the_author();?></span>
+                </div>
                 <div class="sidebar">
+
+                    <div class="quick-links related">
+                        <h4>Related Posts</h4>
+                        <ul>
+                            <?php
+                            $current_post = $post->ID;
+                            $categories = get_the_category();
+                            foreach ($categories as $category) :
+                            $posts = get_posts('numberposts=5&category='. $category->term_id . '&exclude=' . $current_post);
+                                foreach($posts as $post) :
+                            ?>
+                                <li>
+                                    <a href="<?php the_permalink(); ?>">
+                                    <span class="small-post-image"><?php if ( has_post_thumbnail() ) {
+                                        echo get_the_post_thumbnail($post->ID, 'thumbnail');
+                                    }?>
+                                    </span>
+                                    <span class="small-post-title"><?php the_title(); ?></span></a>
+                                </li>
+                            <?php endforeach; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <?php
+                    wp_reset_query();
+                    ?>
+                    <br>
+                    <br>
                     <div class="quick-links">
 
                         <?php
@@ -120,11 +150,6 @@
 
                         </ul>
                     </div>
-                    <!--div class="textWidget">
-                        <p><img src="/wp-content/uploads/2015/08/volleyball-canada.png"></p>
-                        <p>Corporis ipsa fugit velit officia unde temporibus est excepturi praesentium eligendi minima, soluta harum nisi quam asperiores dolores voluptatibus alias porro dolor beatae dignissimos assumenda iste laudantium quisquam, ipsam? Reprehenderit exercitationem quas aut nostrum eius ullam cum sed illo dolore soluta facere ratione provident, alias itaque, explicabo, similique sit culpa! A corrupti exercitationem ratione voluptatem nostrum debitis quod sint vel provident.</p>
-                    </div-->
-
                 </div>
             </div>
         </div>
