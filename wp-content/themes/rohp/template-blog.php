@@ -47,7 +47,7 @@ if ( has_post_thumbnail() ) :
                                 <?php if ( has_post_thumbnail() ) {
 
                                     $url = get_the_post_thumbnail( $post->ID, 'large');?>
-                                    <a href="<?php the_permalink(); ?>"><?php echo $url; ?></a>
+                                    <a class="image-box" href="<?php the_permalink(); ?>"><?php echo $url; ?></a>
                                 <?php }  ?>
                                 <div class="post-data">
                                     <span class="post-date"><?php echo get_the_date(); ?> | </span><span>In</span><span class="post-cat">

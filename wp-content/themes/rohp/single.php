@@ -38,9 +38,9 @@
                 </span>
                 <?php
                 if ( has_post_thumbnail() ) :
-                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+                    //$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
                     ?>
-                    <div class="featuredImage"><?php the_post_thumbnail(); ?></div>
+                    <div class="featuredImage"><?php the_post_thumbnail('large'); ?></div>
 
                 <?php endif; ?>
                 <div class="articleBody">

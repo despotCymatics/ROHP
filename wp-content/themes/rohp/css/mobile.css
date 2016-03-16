@@ -241,6 +241,10 @@
     .post-item img {
         height: 100%;
     }
+
+    .post-item a.image-box {
+        height: 100%;
+    }
     .post-item span.post-author img {
         top: 10px;
     }
