@@ -1262,3 +1262,10 @@ tr:first-child td:last-child{
     padding-top: 2px;
     vertical-align: top;
 }
+
+.gallery-icon {
+    margin-right: 10px;
+}
+.gallery p {
+    margin-bottom: 0;
+}

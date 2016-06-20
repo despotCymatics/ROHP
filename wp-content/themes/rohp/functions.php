@@ -27,7 +27,7 @@ function rohp_scripts_styles() {
 	global $wp_styles;
 	wp_deregister_script('jquery');
 	//wp_deregister_style('open-sans');
-	wp_register_script('rohp-jquery', (get_template_directory_uri() . '/js/jquery-1.11.1.min.js'), false, '1.11.1');
+	wp_register_script('jquery', (get_template_directory_uri() . '/js/jquery-1.11.1.min.js'), false, false);
 
 	// Adds JavaScript for handling the navigation menu hide-and-show behavior.
     wp_enqueue_script( 'rohp-prefixfree', (get_template_directory_uri() . '/js/prefixfree.min.js'), array(), false, false );
