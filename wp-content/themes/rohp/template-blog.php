@@ -33,6 +33,7 @@ if ( has_post_thumbnail() ) :
                 </div>
             </div>
         </div>
+
         <div class="row no-margin no-padding">
             <div class="col-sm-12">
                 <div class="articleBody">
@@ -104,66 +105,6 @@ if ( has_post_thumbnail() ) :
 
                 </div>
             </div>
-            <!--div class="col-sm-4">
-                <div class="sidebar">
-                    <div class="quick-links">
-                        <?php
-                        $args = array(
-                            'show_option_all'    => '',
-                            'orderby'            => 'name',
-                            'order'              => 'ASC',
-                            'style'              => 'list',
-                            'show_count'         => 0,
-                            'hide_empty'         => 1,
-                            'use_desc_for_title' => 1,
-                            'child_of'           => 0,
-                            'feed'               => '',
-                            'feed_type'          => '',
-                            'feed_image'         => '',
-                            'exclude'            => '',
-                            'exclude_tree'       => '',
-                            'include'            => '',
-                            'hierarchical'       => 1,
-                            'title_li'           => __( '<h4><i class="fa fa-list-ul"></i> Categories</h4>' ),
-                            'show_option_none'   => __( '' ),
-                            'number'             => null,
-                            'echo'               => 1,
-                            'depth'              => 0,
-                            'current_category'   => 0,
-                            'pad_counts'         => 0,
-                            'taxonomy'           => 'category',
-                            'walker'             => null
-                        );
-                        wp_list_categories( $args );
-                        ?>
-
-                    </div>
-
-                </div>
-                <div-- class="sidebar">
-                    <?php if(get_field('qlinks') != '') { ?>
-
-                        <div class="quick-links">
-                            <h4><i class="fa fa-link"></i> Quick links</h4>
-                            <ul>
-                                <?php
-                                $qlinks = get_field('qlinks');
-                                echo do_shortcode($qlinks);
-                                ?>
-                            </ul>
-                        </div>
-                    <?php } else { ?>
-                        <div class="quick-links">
-                            <h4><i class="fa fa-link"></i> Quick links</h4>
-                            <ul>
-                                <li><a href="/contact" title="Contact Us">Contact Us</a></li>
-                                <li><a href="/about-us/coaches/" title="High Performance Team ">High Performance Team</a></li>
-                                <li><a href="/about-us/training-philosophy/" title="Training Philosophy">Training Philosophy</a></li>
-                                <li><a href="/strength-conditioning/sc-individual-training/individual-training/" title="Private Strength & Conditioning Training">Private Strength & Conditioning Training</a></li>
-                            </ul>
-                        </div>
-                    <?php } ?>
-                </div-->
             </div>
         </div>
 
