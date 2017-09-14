@@ -30,13 +30,13 @@ function rohp_scripts_styles() {
 	wp_register_script('jquery', (get_template_directory_uri() . '/js/jquery-1.11.1.min.js'), false, false);
 
 	// Adds JavaScript for handling the navigation menu hide-and-show behavior.
-    wp_enqueue_script( 'rohp-prefixfree', (get_template_directory_uri() . '/js/prefixfree.min.js'), array(), false, false );
+   wp_enqueue_script( 'rohp-prefixfree', (get_template_directory_uri() . '/js/prefixfree.min.js'), array(), false, false );
 	wp_enqueue_script( 'rohp-modernizr.custom', get_template_directory_uri() . '/js/modernizr.custom.js', array(), false, false );
     wp_enqueue_script( 'rohp-jquery' );
 	wp_enqueue_script( 'rohp-jquery.slimscroll', get_template_directory_uri() . '/js/jquery.slimscroll.min.js', array(), false, true );
     wp_enqueue_script( 'rohp-bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array(), false, true );
-    wp_enqueue_script( 'rohp-slick', get_template_directory_uri() . '/js/slick.js', array(), false, true );
-    wp_enqueue_script( 'rohp-tw-feed', get_template_directory_uri() . '/js/tw-feed.js', array(), false, true );
+	wp_enqueue_script( 'rohp-slick', get_template_directory_uri() . '/js/slick.js', array(), false, true );
+	wp_enqueue_script( 'rohp-tw-feed', get_template_directory_uri() . '/js/tw-feed.js', array(), false, true );
 	wp_enqueue_script( 'rohp-custom', get_template_directory_uri() . '/js/misc.js', array(), false, false );
 
 	// Loads our main stylesheet.
@@ -136,52 +136,21 @@ add_action("save_post", "save_custom_meta_box", 10, 3);
  *
  */
 
-/*
-function richmondoval_widgets_init() {
 
-
-    register_sidebar( array(
-        'name' => __( 'Footer Homepage Left', 'richmondoval' ),
-        'id' => 'footer-homepage-left',
-        'description' => __( 'Widgets in this area will be shown on homepage footer area.', 'richmondoval' ),
-        'before_widget' => '',
-        'after_widget'  => '',
-        'before_title'  => '<h2 class="widgettitle">',
-        'after_title'   => '</h2>',
-    ) );
-
-    register_sidebar( array(
-        'name' => __( 'Footer Homepage Right', 'richmondoval' ),
-        'id' => 'footer-homepage-right',
-        'description' => __( 'Widgets in this area will be shown on homepage footer area.', 'richmondoval' ),
-        'before_widget' => '',
-        'after_widget'  => '',
-        'before_title'  => '<h2 class="widgettitle">',
-        'after_title'   => '</h2>',
-    ) );
+function widgets_init() {
 
     register_sidebar(array(
-        'name' => __( 'Inner Promo', 'richmondoval' ),
-        'id' => 'inner-promo-right',
-        'description' => __('Appears as the promo on the inner pages', 'richmondoval'),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => '</div>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>',
-    ));
-
-    register_sidebar(array(
-        'name' => __( 'Inner Promo 2', 'richmondoval' ),
-        'id' => 'inner-promo-right2',
-        'description' => __('Appears as the promo on the inner pages', 'richmondoval'),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => '</div>',
+        'name' => __( 'Quick Links Sidebar', 'rohp' ),
+        'id' => 'quick-links',
+        'description' => __('Appears as the page right side', 'rohp'),
+        'before_widget' => '',
+        'after_widget' => '',
         'before_title' => '<h2 class="widgettitle">',
         'after_title' => '</h2>',
     ));
 }
-add_action( 'widgets_init', 'richmondoval_widgets_init' );
-*/
+add_action( 'widgets_init', 'widgets_init' );
+
 
 /**
  * Filter the page title.

@@ -79,12 +79,13 @@
                     <?php } else { ?>
                     <div class="quick-links">
                         <h4><i class="fa fa-link"></i> Quick links</h4>
-                        <ul>
+                        <?php dynamic_sidebar('quick-links' );?>
+                        <!--<ul>
                             <li><a href="/contact" title="Contact Us">Contact Us</a></li>
                             <li><a href="/about-us/coaches/" title="High Performance Team ">High Performance Team</a></li>
                             <li><a href="/about-us/training-philosophy/" title="Training Philosophy">Training Philosophy</a></li>
                             <li><a href="/strength-conditioning/sc-individual-training/individual-training/" title="Private Strength & Conditioning Training">Private Strength & Conditioning Training</a></li>
-                        </ul>
+                        </ul>-->
                     </div>
                         <?php } ?>
 

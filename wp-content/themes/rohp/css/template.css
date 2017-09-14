@@ -4,12 +4,75 @@
 }
 h1, h2, h3, h4 {
     font-family: NeoSansStdRegular, arial, sans-serif;
-    color: #ff8930;
+    color: #005087;
     transform: rotate(0.001deg);
 }
 
 h3, h4 {
     font-weight: 600;
+}
+header {
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    right: 0;
+    width: 76%;
+}
+
+.topBar {
+    background: rgba(45, 45, 45, 0.9);
+    height: 56px;
+    right: 0;
+}
+
+.topBar .combinedMenu {
+    color: #FFF;
+    float: right;
+}
+
+.topBar .combinedMenu a {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 56px;
+    padding: 0 15px;
+    color: #FFF;
+    font-size: 11px;
+    border-left: 1px solid #525252;
+    text-decoration: none;
+    opacity: .8;
+}
+.topBar .combinedMenu a:hover {
+    opacity: 1;
+}
+.topBar .combinedMenu a:before {
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-flex;
+    align-items: center;
+    width: 30px;
+    height: 25px;
+    content: "";
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.topBar .combinedMenu a.rox:before {
+    background-image: url("../images/icon-rox.png");
+}
+.topBar .combinedMenu a.ro:before {
+    background-image: url("../images/icon-ro.png");
+}
+.topBar .combinedMenu a.yyoga:before {
+    background-image: url("../images/icon-yoga.png");
+}
+.topBar .combinedMenu a.ser:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    text-align: center;
+    display: table-cell;
+    font-size: 15px;
+}
+.topBar .combinedMenu a.ser:hover {
+    text-decoration: none;
 }
 
 .content .alignright {
@@ -137,7 +200,7 @@ h3, h4 {
 
 .mainMenu ul li a:hover, .mainMenu ul ul li a:hover .mainMenu ul li a.active {
     background-color: rgba(0, 0, 0, 0.35);
-    color: #d35400;
+    color: #0088ce;
 }
 
 
@@ -199,18 +262,18 @@ h3, h4 {
 
 .mainMenu ul ul li a:hover, .mainMenu ul li:hover ul li a:hover {
     background-color: rgba(0, 0, 0, 0.35);
-    color: #d35400;
+    color: #0088ce;
 }
 
 /*3rd level*/
 
 .mainMenu ul ul ul li a {
-    color: #fcc700;
+    color: #6bcce6;
     padding-left: 50px;
 }
 .mainMenu ul li:hover ul ul li a {
     /*background-color: transparent;
-    color: #fcc700;*/
+    color: #6bcce6;*/
 }
 
 .mainMenu ul li span.subToggler {
@@ -279,7 +342,7 @@ h3, h4 {
 }*/
 
 .mainMenu .current_page_item > a {
-    color: #d35400;
+    color: #0088ce;
     background-color: rgba(0, 0, 0, 0.35);
 }
 
@@ -375,7 +438,7 @@ p.copyright {
     font-size: 13px;
     /*margin-bottom: 12px;*/
     margin-bottom: 0;
-    padding: 35px 10px;
+    padding: 36px 10px;
 
 }
 
@@ -390,7 +453,7 @@ p.copyright {
 
 .home .bottomBar {
     display: table;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 24%;
     width: 76%;
@@ -399,7 +462,7 @@ p.copyright {
 
 .bottomBar a.link {
     width: 89px;
-    height: 89px;
+    height: 90px;
     display: table-cell;
     vertical-align: middle;
     padding: 25px;
@@ -416,7 +479,7 @@ p.copyright {
 }
 
 .bottomBar a.link:hover {
-    color: #d35400;
+    color: #0088ce;
     background-color: rgba(0, 0, 0, 0.35);
 }
 
@@ -444,7 +507,7 @@ p.copyright {
 }
 
 .tw-feed a:hover {
-    color: #d35400;
+    color: #0088ce;
 }
 
 .tw-feed p{
@@ -528,7 +591,7 @@ p.copyright {
 }
 
 .news-flash-container a.more {
-    color: #ff8930;
+    color: #005087;
     font-weight: 600;
     margin-top: 5px;
     display: block;
@@ -546,19 +609,21 @@ p.copyright {
 }
 
 
-
 /* page layout */
 
 .gutter {
     /*width: 1220px;*/
     width: 76%;
     margin-left: 24%;
+    margin-top: 56px;
     position: relative;
     top: 0;
     bottom: 0;
+
 }
 .featuredImage {
-    height: 320px;
+    /*margin-top: -56px;*/
+    height: 380px;
     overflow-y: hidden;
     background-size: cover;
     background-position: center center;
@@ -587,7 +652,7 @@ p.copyright {
 }
 
 .btn-default {
-    background: #ff8930;
+    background: #005087;
     border:none;
     color:#fff;
     text-transform: uppercase;
@@ -622,7 +687,7 @@ h4.questionNtoggler {
 }
 
 h4.questionNtoggler:hover, h4.questionNtoggler.on {
-    background-color: #d35400;
+    background-color: #0088ce;
     padding: 12px 55px 12px 25px;
     transition: all 220ms ease;
 }
@@ -645,11 +710,11 @@ h4.questionNtoggler:before {
 
 h4.questionNtoggler.on:before {
     content: '\f106';
-    background: #d35400;
+    background: #0088ce;
 }
 
 h4.questionNtoggler:hover:before {
-    background: #d35400;
+    background: #0088ce;
     transition: all 220ms ease;
 }
 
@@ -745,7 +810,7 @@ h4.showMoreToggler {
 }
 
 h4.showMoreToggler:hover, h4.showMoreToggler.on {
-    background-color: #ff8930 ;
+    background-color: #005087 ;
     color: #fff;
 }
 
@@ -769,7 +834,7 @@ h4.showMoreToggler:after {
 }
 
 .nav-links .current {
-    background: #ff8930;
+    background: #005087;
     color: #fff;
 }
 
@@ -789,7 +854,7 @@ h4.showMoreToggler:after {
 
 .quick-links h4 {
     padding: 20px 30px;
-    color: #d35400;
+    color: #0088ce;
     text-transform: uppercase;
 }
 
@@ -816,7 +881,7 @@ h4.showMoreToggler:after {
 }
 
 .quick-links ul li a:hover {
-    background-color: #d35400;
+    background-color: #0088ce;
     color:#fff;
 }
 
@@ -824,7 +889,7 @@ h4.showMoreToggler:after {
     position: absolute;
     left: 15px;
     content: "\f0da";
-    color: #d35400;
+    color: #0088ce;
     font-family: FontAwesome;
 }
 .quick-links ul li a:Hover:before{
@@ -958,7 +1023,7 @@ h4.showMoreToggler:after {
 }
 
 .pageMenu ul li:hover a, .pageMenu ul li a.active, .pageMenu ul li:hover a, .pageMenu .current_page_item a {
-    color:#ff8930;
+    color:#005087;
     background-color: #f7f7f7;
     text-decoration: none;
 }
@@ -1005,12 +1070,12 @@ h4.showMoreToggler:after {
 
 .pageMenu ul ul li a:hover, .pageMenu ul li:hover ul li a:hover {
     background-color: rgba(0,0,0,0.05);
-    color: #ff8930;
+    color: #005087;
 }
 
 #bookMe4Widget object {
     width: 100%;
-    height: 500px;
+
 }
 
 #bookMe4Widget.long object {
@@ -1019,7 +1084,6 @@ h4.showMoreToggler:after {
 
 object {
     width: 100%;
-    height: 500px;
 }
 
 
@@ -1122,7 +1186,7 @@ tr:first-child td:last-child{
 .nav-links a,
 .post-cat a,
 .next-prev a{
-    color: #ff8930;
+    color: #005087;
 }
 .post-item .post-data {
     padding-right: 6px;
@@ -1227,7 +1291,7 @@ tr:first-child td:last-child{
 .side-author {
     clear: both;
     margin-bottom: 30px;
-    color: #ff8930;
+    color: #005087;
     font-size: 16px;
 }
 .sidebar .quick-links img {
