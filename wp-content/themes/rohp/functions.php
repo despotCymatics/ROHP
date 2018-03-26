@@ -136,52 +136,21 @@ add_action("save_post", "save_custom_meta_box", 10, 3);
  *
  */
 
-/*
-function richmondoval_widgets_init() {
 
-
-    register_sidebar( array(
-        'name' => __( 'Footer Homepage Left', 'richmondoval' ),
-        'id' => 'footer-homepage-left',
-        'description' => __( 'Widgets in this area will be shown on homepage footer area.', 'richmondoval' ),
-        'before_widget' => '',
-        'after_widget'  => '',
-        'before_title'  => '<h2 class="widgettitle">',
-        'after_title'   => '</h2>',
-    ) );
-
-    register_sidebar( array(
-        'name' => __( 'Footer Homepage Right', 'richmondoval' ),
-        'id' => 'footer-homepage-right',
-        'description' => __( 'Widgets in this area will be shown on homepage footer area.', 'richmondoval' ),
-        'before_widget' => '',
-        'after_widget'  => '',
-        'before_title'  => '<h2 class="widgettitle">',
-        'after_title'   => '</h2>',
-    ) );
+function widgets_init() {
 
     register_sidebar(array(
-        'name' => __( 'Inner Promo', 'richmondoval' ),
-        'id' => 'inner-promo-right',
-        'description' => __('Appears as the promo on the inner pages', 'richmondoval'),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => '</div>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>',
-    ));
-
-    register_sidebar(array(
-        'name' => __( 'Inner Promo 2', 'richmondoval' ),
-        'id' => 'inner-promo-right2',
-        'description' => __('Appears as the promo on the inner pages', 'richmondoval'),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => '</div>',
+        'name' => __( 'Quick Links Sidebar', 'rohp' ),
+        'id' => 'quick-links',
+        'description' => __('Appears as the page right side', 'rohp'),
+        'before_widget' => '',
+        'after_widget' => '',
         'before_title' => '<h2 class="widgettitle">',
         'after_title' => '</h2>',
     ));
 }
-add_action( 'widgets_init', 'richmondoval_widgets_init' );
-*/
+add_action( 'widgets_init', 'widgets_init' );
+
 
 /**
  * Filter the page title.

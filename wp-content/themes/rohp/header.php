@@ -65,9 +65,9 @@ ini_set('display_errors', 1);
     <header>
         <div class="topBar">
             <div class="combinedMenu">
-                <a class="rox" title="Richmond Oval Experience" href="http://therox.richmondoval.ca/"><span>Olympic Museum</span></a>
+                <a class="rox" title="Richmond Oval Experience" href="http://richmondoval.ca/therox"><span>Olympic Museum</span></a>
                 <a class="ro" title="Richmond Oval" href="http://richmondoval.ca/"><span>Richmond Oval</span></a>
-                <a class="yyoga" title="Yyoga" href="http://yyoga.ca/"><span>YYoga.ca</span></a>
+                <a class="yyoga" title="Yyoga" href="https://www.yyoga.ca/locations/richmond-olympic-oval"><span>YYoga.ca</span></a>
                 <!--<a class="onsite" title="On site services" href="#">On Site Services</a>-->
 
             </div>
@@ -120,18 +120,7 @@ ini_set('display_errors', 1);
 
                             <?php
                         }else { ?>
-                            <!--<div class="slide" style="background: url('<?php /*echo $image[0];*/?>')"></div>
-                        <script>
-                            $('.slick-slideshow').slick({
-                             autoplay: true,
-                             arrows: false,
-                             pauseOnHover: false,
-                             fade: true,
-                             speed: 4000,
-                             autoplaySpeed: 6000
-
-                             });
-                        </script>-->
+                            <div class="slide" style="background: url('<?php echo $image[0];?>')"></div>
                         <?php
                         }
 

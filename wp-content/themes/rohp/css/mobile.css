@@ -31,6 +31,9 @@
     .slider {
 
     }
+    header {
+        width: 100%;
+    }
 
     .video-slide video {
         display: none;
