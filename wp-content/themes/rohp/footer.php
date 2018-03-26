@@ -1,5 +1,5 @@
 <div class="bottomBar">
-    <a href="/blog/photo-gallery/" title="Video/Photo Gallery" class="link"><i class="fa fa-camera-retro"></i></a>
+    <a href="http://richmondoval.ca/ovalhp/facilities/photo-gallery/" title="Video/Photo Gallery" class="link"><i class="fa fa-camera-retro"></i></a>
     <!--a href="#" class="link"><i class="fa fa-file-video-o"></i></a-->
     <div class="tw-feed" id="twitter-feed">
 
