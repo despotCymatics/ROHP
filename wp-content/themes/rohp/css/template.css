@@ -11,6 +11,69 @@ h1, h2, h3, h4 {
 h3, h4 {
     font-weight: 600;
 }
+header {
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    right: 0;
+    width: 76%;
+}
+
+.topBar {
+    background: rgba(45, 45, 45, 0.9);
+    height: 56px;
+    right: 0;
+}
+
+.topBar .combinedMenu {
+    color: #FFF;
+    float: right;
+}
+
+.topBar .combinedMenu a {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 56px;
+    padding: 0 15px;
+    color: #FFF;
+    font-size: 11px;
+    border-left: 1px solid #525252;
+    text-decoration: none;
+    opacity: .8;
+}
+.topBar .combinedMenu a:hover {
+    opacity: 1;
+}
+.topBar .combinedMenu a:before {
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-flex;
+    align-items: center;
+    width: 30px;
+    height: 25px;
+    content: "";
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.topBar .combinedMenu a.rox:before {
+    background-image: url("../images/icon-rox.png");
+}
+.topBar .combinedMenu a.ro:before {
+    background-image: url("../images/icon-ro.png");
+}
+.topBar .combinedMenu a.yyoga:before {
+    background-image: url("../images/icon-yoga.png");
+}
+.topBar .combinedMenu a.ser:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    text-align: center;
+    display: table-cell;
+    font-size: 15px;
+}
+.topBar .combinedMenu a.ser:hover {
+    text-decoration: none;
+}
 
 .content .alignright {
     float: right;
@@ -56,7 +119,31 @@ h3, h4 {
     background-size: cover !important;
     background-position: center center !important;
 }
+.video-slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 
+}
+
+.video-slide video {
+    /* Make video to at least 100% wide and tall */
+    min-width: 100%;
+    min-height: 100%;
+
+    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+    width: auto;
+    height: auto;
+
+    /*center video*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 /* Main Menu */
 
 .mainMenu .logo {
@@ -375,7 +462,7 @@ p.copyright {
     font-size: 13px;
     /*margin-bottom: 12px;*/
     margin-bottom: 0;
-    padding: 35px 10px;
+    padding: 36px 10px;
 
 }
 
@@ -390,7 +477,7 @@ p.copyright {
 
 .home .bottomBar {
     display: table;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 24%;
     width: 76%;
@@ -399,7 +486,7 @@ p.copyright {
 
 .bottomBar a.link {
     width: 89px;
-    height: 89px;
+    height: 90px;
     display: table-cell;
     vertical-align: middle;
     padding: 25px;
@@ -546,19 +633,21 @@ p.copyright {
 }
 
 
-
 /* page layout */
 
 .gutter {
     /*width: 1220px;*/
     width: 76%;
     margin-left: 24%;
+    margin-top: 56px;
     position: relative;
     top: 0;
     bottom: 0;
+
 }
 .featuredImage {
-    height: 320px;
+    /*margin-top: -56px;*/
+    height: 380px;
     overflow-y: hidden;
     background-size: cover;
     background-position: center center;
@@ -1010,7 +1099,7 @@ h4.showMoreToggler:after {
 
 #bookMe4Widget object {
     width: 100%;
-    height: 500px;
+
 }
 
 #bookMe4Widget.long object {
@@ -1019,7 +1108,6 @@ h4.showMoreToggler:after {
 
 object {
     width: 100%;
-    height: 500px;
 }
 
 

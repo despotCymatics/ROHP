@@ -18,21 +18,6 @@ ini_set('display_errors', 1);
 
     <?php wp_head();?>
 
-    <!-- Icon -->
-    <!--
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
-    <meta name="application-name" content="Kancelarija za saradnju sa civilnim društvom">
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <meta name="msapplication-square310x310logo" content="/mstile-310x310.png">
-    -->
-
     <!-- IE conditional CSS -->
     <!--[if IE 8]>
     <link rel="stylesheet" type="text/css" href="../css/ie8.css" media="screen" />
@@ -58,13 +43,38 @@ ini_set('display_errors', 1);
         ga('send', 'pageview');
 
     </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NLCDPL');</script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body <?php body_class(); ?>>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLCDPL"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <div class="loader"><span></span></div>
 <div class="pageWrap">
-<header></header>
-<div class="menuToggler"></div>
+    <header>
+        <div class="topBar">
+            <div class="combinedMenu">
+                <a class="rox" title="Richmond Oval Experience" href="http://therox.richmondoval.ca/"><span>Olympic Museum</span></a>
+                <a class="ro" title="Richmond Oval" href="http://richmondoval.ca/"><span>Richmond Oval</span></a>
+                <a class="yyoga" title="Yyoga" href="http://yyoga.ca/"><span>YYoga.ca</span></a>
+                <!--<a class="onsite" title="On site services" href="#">On Site Services</a>-->
+
+            </div>
+        </div>
+    </header>
+
+    <div class="menuToggler"></div>
 
     <?php if(is_front_page()) {
 
@@ -78,7 +88,10 @@ ini_set('display_errors', 1);
         $query = null;
         $query = new WP_Query($args);
 
-        if ($query->have_posts()) { ?>
+        if ($query->have_posts()) {
+
+
+            ?>
 
         <div class="slider">
             <div class="slick-slideshow">
@@ -87,10 +100,41 @@ ini_set('display_errors', 1);
                     $query->the_post();
                     if ( has_post_thumbnail() ) {
                         $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail');
-                ?>
-                    <div class="slide" style="background: url('<?php echo $image[0];?>')"></div>
 
-                <?php
+                        if(get_field('video_source') != '') { ?>
+                            <div class="video-slide" style="background: url('<?php echo $image[0];?>') no-repeat center / cover">
+                                <video width="100%" height="100%" autoplay preload="metadata" loop>
+                                    <source src="<?=get_field('video_source');?>" type="video/mp4">
+                                </video>
+                                <script type="text/javascript">
+                                    $('.slick-slideshow').on('beforeChange', function(event, slick, currentSlide){
+                                        console.log(currentSlide);
+                                        if (currentSlide == 0) {
+                                            $('.slick-slideshow').slick('slickPause');
+                                            //myVideo.play();
+                                        }
+                                    });
+                                </script>
+                            </div>
+
+
+                            <?php
+                        }else { ?>
+                            <!--<div class="slide" style="background: url('<?php /*echo $image[0];*/?>')"></div>
+                        <script>
+                            $('.slick-slideshow').slick({
+                             autoplay: true,
+                             arrows: false,
+                             pauseOnHover: false,
+                             fade: true,
+                             speed: 4000,
+                             autoplaySpeed: 6000
+
+                             });
+                        </script>-->
+                        <?php
+                        }
+
                     }
                 }
                 ?>
@@ -102,62 +146,58 @@ ini_set('display_errors', 1);
 
         wp_reset_query();
 
-        ?>
+    } ?>
 
-    <?php } ?>
+    <div class="mainMenu">
+        <div class="logo"><a href="<?php echo get_home_url(); ?>"><img src="<?=get_template_directory_uri()?>/images/rohp-logo.png"></a></div>
+        <div class="scrollable">
+            <nav>
 
-<div class="mainMenu">
-    <div class="logo"><a href="<?php echo get_home_url(); ?>"><img src="<?=get_template_directory_uri()?>/images/rohp-logo.png"></a></div>
-    <div class="scrollable">
-        <nav>
+                <?php
 
-            <?php
+                $args = array(
+                    'theme_location'  => '',
+                    'menu'            => 'Main Menu',
+                    'container'       => '',
+                    'container_class' => '',
+                    'container_id'    => '',
+                    'menu_class'      => 'main-menu',
+                    'menu_id'         => '',
+                    'echo'            => true,
+                    'fallback_cb'     => 'wp_page_menu',
+                    'before'          => '',
+                    'after'           => '',
+                    'link_before'     => '',
+                    'link_after'      => '',
+                    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'depth'           => 4,
+                    'walker'          => ''
+                );
 
-            $args = array(
-                'theme_location'  => '',
-                'menu'            => 'Main Menu',
-                'container'       => '',
-                'container_class' => '',
-                'container_id'    => '',
-                'menu_class'      => 'main-menu',
-                'menu_id'         => '',
-                'echo'            => true,
-                'fallback_cb'     => 'wp_page_menu',
-                'before'          => '',
-                'after'           => '',
-                'link_before'     => '',
-                'link_after'      => '',
-                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                'depth'           => 4,
-                'walker'          => ''
-            );
+                wp_nav_menu( $args );
+                ?>
 
-            wp_nav_menu( $args );
-            ?>
-
-        </nav>
-    </div>
-
-
-    <div class="bottomMenu">
-        <?php echo get_search_form(); ?>
-        <!--div class="searchBox">
-            <i class="glyphicon glyphicon-search"></i>
-            <input type="search" class="form-control" placeholder="Search" />
-        </div-->
-        <!--
-        <div class="socialBox">
-            <a href="#" class="fb"><i class="fa fa-facebook"></i></a>
-            <a href="#" class="tw"><i class="fa fa-twitter"></i></a>
-            <a href="#" class="yt"><i class="fa fa-youtube"></i></a>
-            <a href="#" class="in"><i class="fa fa-instagram"></i></a>
-            <br>
+            </nav>
         </div>
-        -->
-        <p class="copyright">Copyright 2015 Richmond Olympic Oval</p>
-    </div>
 
-</div>
+        <div class="bottomMenu">
+            <?php echo get_search_form(); ?>
+            <!--div class="searchBox">
+                <i class="glyphicon glyphicon-search"></i>
+                <input type="search" class="form-control" placeholder="Search" />
+            </div-->
+            <!--
+            <div class="socialBox">
+                <a href="#" class="fb"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="tw"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="yt"><i class="fa fa-youtube"></i></a>
+                <a href="#" class="in"><i class="fa fa-instagram"></i></a>
+                <br>
+            </div>
+            -->
+            <p class="copyright">Copyright <?=date('Y');?> Richmond Olympic Oval</p>
+        </div>
+    </div>
 
 <?php
 if(is_front_page()) {

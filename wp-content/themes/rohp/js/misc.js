@@ -86,15 +86,6 @@
             }, 800);
         });
 
-        $('.slick-slideshow').slick({
-            autoplay: true,
-            arrows: false,
-            pauseOnHover: false,
-            fade: true,
-            speed: 4000,
-            autoplaySpeed: 6000
-
-        });
 
         $('#news-flash').slick({
             autoplay: true,
