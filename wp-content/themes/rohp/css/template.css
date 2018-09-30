@@ -120,6 +120,35 @@ header {
     background-position: center center !important;
 }
 
+.slider .slide-meta {
+    position: absolute;
+    left: 27%;
+    top: 90px;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.slide .slide-meta h2 {
+    color: #fff;
+    font-size: 82px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 0;
+    font-family: NeoSansStdBold, arial, sans-serif;
+    text-shadow: 1px 1px 1px #111;
+}
+
+.slide .slide-meta p {
+    font-family: NeoSansStdRegular, arial, sans-serif;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #111;
+}
+.slide .slide-meta .btn-lg {
+    padding: 10px 30px;
+}
+
 /* Main Menu */
 
 .mainMenu .logo {
@@ -537,9 +566,13 @@ p.copyright {
     font-weight: 600;
 }
 
+.tw-feed .user * {
+	display: inline-block;
+}
+
 .tw-feed .tweet {
     font-size: 13px;
-    height: 40px;
+    /*height: 40px;*/
     overflow: hidden;
 }
 
@@ -1225,7 +1258,7 @@ tr:first-child td:last-child{
 
 .post-item a.image-box {
     display: block;
-    height: 14vw;
+    
     margin-bottom: 5px;
     overflow: hidden;
 
@@ -1243,11 +1276,12 @@ tr:first-child td:last-child{
 
 .post-item span.post-author img{
     border: 2px solid #ddd;
-    border-radius: 25px;
+    border-radius: 50%;
     height: 45px;
     position: absolute;
     right: 24px;
-    top: 11.6vw;
+    top: 10px;
+    z-index: 2;
     width: 45px;
 }
 .post-title h1{

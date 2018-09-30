@@ -55,6 +55,8 @@ ini_set('display_errors', 1);
 
 <body <?php body_class(); ?>>
 
+<img style="position: absolute;" src="//p3.eyereturn.com/seg/?r=13991:4838400" height="1" width="1" />
+
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLCDPL"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -108,7 +110,6 @@ ini_set('display_errors', 1);
                                 </video>
                                 <script type="text/javascript">
                                     $('.slick-slideshow').on('beforeChange', function(event, slick, currentSlide){
-                                        console.log(currentSlide);
                                         if (currentSlide == 0) {
                                             $('.slick-slideshow').slick('slickPause');
                                             //myVideo.play();
@@ -120,7 +121,18 @@ ini_set('display_errors', 1);
 
                             <?php
                         }else { ?>
-                            <div class="slide" style="background: url('<?php echo $image[0];?>')"></div>
+                            <div class="slide" style="background: url('<?php echo $image[0];?>')">
+                                <div class="slide-meta">
+
+                                    <h2><?=the_field('slide_title');?></h2>
+                                    <p><?=the_field('slide_text');?></p>
+                                    <?php
+                                        if(get_field('button_url') != '') {
+                                    ?>
+                                        <a class="btn-default btn-lg" href="<?=the_field('button_url');?>" title="">Learn More</a>
+                                        <?php } ?>
+                                </div>
+                            </div>
                         <?php
                         }
 

@@ -31,6 +31,11 @@
     .slider {
 
     }
+
+    .video-slide video {
+        display: none;
+    }
+
     header {
         width: 100%;
     }
@@ -211,6 +216,16 @@
 }
 
 @media (max-width: 992px) {
+    .slider .slide-meta {
+        left: 20px;
+        top: 65px;
+    }
+    .slider .slide-meta h2 {
+        font-size: 32px;
+    }
+    .slider .slide-meta p {
+        font-size: 18px;
+    }
 
     .content.no-padding-right {
         padding-right: 20px !important;
