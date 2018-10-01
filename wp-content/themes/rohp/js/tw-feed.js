@@ -555,7 +555,7 @@ function constructTwitterCDNUrl(params) {
 // hashtags.
 var config1 = {
     //"id": '649571772761833472',
-    "id": 'ovalhp',
+    "profile": {"screenName": 'ovalhp'},
     "domId": 'twitter-feed',
     "maxTweets": 1,
     "enableLinks": true,
