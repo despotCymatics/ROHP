@@ -78,7 +78,7 @@
                         </div>
                     <?php } else { ?>
                     <div class="quick-links">
-                        <h4><i class="fa fa-link"></i> Quick links</h4>
+                       <!-- <h4><i class="fa fa-link"></i> More from OvalHP</h4>-->
                         <?php dynamic_sidebar('quick-links' );?>
                         <!--<ul>
                             <li><a href="/contact" title="Contact Us">Contact Us</a></li>

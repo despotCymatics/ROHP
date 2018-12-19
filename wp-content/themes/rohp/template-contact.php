@@ -46,30 +46,8 @@ get_header(); ?>
                     <div class="contactMap">
                         <div class="mapHolder">
 
-                            <?php $map = get_field('google_map'); ?>
-                            <span class="mapAspect" role="presentation" aria-hidden="true"></span>
-                            <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-                            <div id="gmap_canvas" style="height:900px;width:100%;"></div>
+                            <?=get_field('google_map');?>
 
-                            <script type="text/javascript">
-                                function init_map() {
-                                    var myOptions = {
-                                        zoom: 14,
-                                        center: new google.maps.LatLng(<?=$map['lat']?>, <?=$map['lng']?>),
-                                        mapTypeId: google.maps.MapTypeId.ROADMAP
-                                    };
-                                    map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
-                                    marker = new google.maps.Marker({
-                                        map: map,
-                                        position: new google.maps.LatLng(<?=$map['lat']?>, <?=$map['lng']?>)
-                                    });
-                                    infowindow = new google.maps.InfoWindow({content: "<?=$map['address']?>"});
-                                    google.maps.event.addListener(marker, "click", function () {
-                                        infowindow.open(map, marker);
-                                    });
-                                }
-                                google.maps.event.addDomListener(window, 'load', init_map);
-                            </script>
 
                         </div><!-- /mapHolder -->
                     </div><!-- /contactMap -->
