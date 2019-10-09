@@ -1,4 +1,3 @@
-
 article,
 aside,
 details,
@@ -235,4 +234,10 @@ select, option, input, textarea {
     color: #000;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-size: 11px;
+}
+
+/*Recaptcha*/
+
+.grecaptcha-badge, .grecaptcha-logo  {
+	display: none;
 }

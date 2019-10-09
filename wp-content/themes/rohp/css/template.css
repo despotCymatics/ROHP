@@ -186,7 +186,7 @@ header {
     height: 100%;
     z-index: 1;
     background: rgba(34, 34, 34, .92);
-    padding-top: 20px;
+    padding-top: 25px;
     overflow-y: hidden;
 }
 

@@ -122,6 +122,7 @@
         /*overflow-y: scroll;*/
         transform: translate3d(-280px,0,0);
         transition: transform 320ms ease;
+        padding-top: 20px;
     }
 
     .mainMenu.active {
